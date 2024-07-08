@@ -3,14 +3,14 @@ object Q3 extends App {
 
     def toLower(x: String): String = x.toLowerCase()
 
-    def formatNames(name: String)(formatter: String => String): String = formatter(name) 
+    def formatNames(name: String)(format: String => String): String = format(name) 
 
     val names = List("Benny", "Niroshan", "Saman", "Kumara")
 
     names.foreach { name =>
         println(formatNames(name)(toUpper)) 
-        println(formatNames(name)(s => s.capitalize)) 
+        println(formatNames(name)(x => x.capitalize)) 
         println(formatNames(name)(toLower)) 
-        println(formatNames(name)(s => s.init + s.last.toUpper)) 
+        println(formatNames(name)(x => x.init + x.last.toUpper)) 
     }
 }
